@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Library Management System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<aside class="sidebar">
+
+    <img src="image.png" alt="Library Logo" class="logo">
+
+    <h2>Library</h2>
+
+    <nav>
+        <a href src="index.html">Dashboard</a>
+        <a onclick="show('books')">Books</a>
+        <a onclick="show('borrow')">Borrow</a>
+        <a onclick="show('return')">Return</a>
+        <a onclick="show('reports')">Reports</a>
+    </nav>
+
+</aside>
+
+<main class="main">
+
+    <section id="dashboard">
+        <h1>Dashboard</h1>
+
+        <div class="card" id="totalBooks">Total Books: 0</div>
+        <div class="card" id="borrowedBooks">Borrowed Books: 0</div>
+    </section>
+
+    
+    <section id="books" class="hidden">
+        <h1>Books Management</h1>
+
+        <div class="box">
+            <input id="title" placeholder="Book Title">
+            <input id="author" placeholder="Author Name">
+            <button onclick="addBook()">Add Book</button>
+        </div>
+
+        <div class="box">
+            <table id="bookTable"></table>
+        </div>
+    </section>
+
+    <section id="borrow" class="hidden">
+        <h1>Borrow Book</h1>
+
+        <div class="box">
+            <select id="borrowSelect"></select>
+            <input id="student" placeholder="Student Name">
+            <button onclick="borrowBook()">Borrow</button>
+        </div>
+    </section>
+
+    <section id="return" class="hidden">
+        <h1>Return Book</h1>
+
+        <div class="box">
+            <select id="returnSelect"></select>
+            <button onclick="returnBook()">Return</button>
+        </div>
+    </sectio>
+    <section id="reports" class="hidden">
+        <h1>Reports</h1>
+
+        <div class="box">
+            <button onclick="filter('all')">All</button>
+            <button onclick="filter('available')">Available</button>
+            <button onclick="filter('borrowed')">Borrowed</button>
+
+            <table id="reportTable"></table>
+        </div>
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
